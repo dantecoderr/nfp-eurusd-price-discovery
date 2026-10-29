@@ -1,0 +1,64 @@
+             quantity  re-derived   thesis  status
+     matched releases    194.0000 194.0000      OK
+            NFP beats    106.0000 106.0000      OK
+           NFP misses     86.0000  86.0000      OK
+          NFP in line      2.0000   2.0000      OK
+ beat + all-3 bullish     14.0000  14.0000      OK
+ miss + all-3 bearish     10.0000  10.0000      OK
+  beat mean R1 (pips)    -14.3934 -14.3900      OK
+       beat median R1    -11.9000 -11.9000      OK
+          beat % down     66.0377  66.0400      OK
+         miss mean R1     14.8477  14.8500      OK
+       miss median R1     13.6500  13.6500      OK
+            miss % up     69.7674  69.7700      OK
+    full-bull mean R1    -34.5214 -34.5200      OK
+     full-bull median    -33.3000 -33.3000      OK
+     full-bull % down     92.8571  92.8600      OK
+    full-bear mean R1     20.3800  20.3800      OK
+       full-bear % up     70.0000  70.0000      OK
+non-aligned beat mean    -11.3304 -11.3300      OK
+              Welch t     -3.2085  -3.2085      OK
+              Welch p      0.0053   0.0053      OK
+       Mann-Whitney p      0.0030   0.0030      OK
+               OLS R2      0.2108   0.2108      OK
+             beta NFP    -13.5915 -13.5900      OK
+           HC3 se NFP      3.3101   3.3100      OK
+             beta AHE     -8.6385  -8.6400      OK
+                p AHE      0.0652   0.0652      OK
+              beta U3      2.3159   2.3200      OK
+                 p U3      0.5945   0.5945      OK
+                R2 T5      0.0157   0.0157      OK
+           joint p T5      0.5810   0.5810      OK
+               R2 T10      0.0223   0.0223      OK
+          joint p T10      0.2831   0.2830      OK
+               R2 T15      0.0091   0.0091      OK
+          joint p T15      0.7104   0.7100      OK
+               R2 T30      0.0153   0.0153      OK
+          joint p T30      0.5333   0.5330      OK
+               R2 T45      0.0094   0.0094      OK
+          joint p T45      0.7685   0.7690      OK
+               R2 T60      0.0164   0.0164      OK
+          joint p T60      0.4495   0.4490      OK
+          hit beat T5     50.0000  50.0000      OK
+         hit beat T10     59.4340  59.4300      OK
+         hit beat T15     65.0943  65.0900      OK
+     hit full-bull T5     35.7143  35.7100      OK
+    hit full-bull T10     28.5714  28.5700      OK
+   gamma T5 (approx.)      0.0489   0.0559 QUAL-OK
+ gamma p T5 (approx.)      0.3376   0.2810 QUAL-OK
+  gamma T10 (approx.)     -0.0227  -0.0185 QUAL-OK
+gamma p T10 (approx.)      0.6773   0.7480 QUAL-OK
+  gamma T15 (approx.)      0.0611   0.0651 QUAL-OK
+gamma p T15 (approx.)      0.3415   0.3270 QUAL-OK
+  gamma T30 (approx.)      0.0181   0.0220 QUAL-OK
+gamma p T30 (approx.)      0.8297   0.8050 QUAL-OK
+  gamma T60 (approx.)     -0.0609  -0.0580 QUAL-OK
+gamma p T60 (approx.)      0.5407   0.5750 QUAL-OK
+
+exact matches: 45 | qualitative matches: 10 | differences: 0 | total: 55
+
+NOT STATED IN THESIS: regression sample N = 170 (first 24 releases are warm-up for the expanding Z-score); Z-scores are clipped at +/-4:
+      date  NFP_raw_z  NFP_Z_HIST_used
+2020-04-03      -9.47             -4.0
+2020-05-08      17.70              4.0
+2020-06-05      67.68              4.0

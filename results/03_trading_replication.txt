@@ -1,0 +1,48 @@
+Fully aligned releases: 24 (bull 14, bear 10)
+
+A. Gross P&L grid (pips): mean / median / n  [cost 0]
+   entry T0 exit T15: mean   0.98  median  -2.80  n 24  t  0.16
+   entry T0 exit T30: mean   2.30  median   4.60  n 23  t  0.33
+   entry T0 exit T45: mean   1.60  median  -0.80  n 23  t  0.20
+   entry T0 exit T60: mean   3.98  median  -7.10  n 23  t  0.44
+   entry T1 exit T15: mean   5.80  median   2.75  n 24  t  0.91
+   entry T1 exit T30: mean   6.65  median   3.40  n 23  t  0.92
+   entry T1 exit T45: mean   5.94  median   1.30  n 23  t  0.70
+   entry T1 exit T60: mean   8.32  median   3.80  n 23  t  0.92
+   entry T2 exit T15: mean   4.86  median   3.70  n 24  t  0.87
+   entry T2 exit T30: mean   5.90  median   3.40  n 23  t  0.88
+   entry T2 exit T45: mean   5.20  median   3.30  n 23  t  0.64
+   entry T2 exit T60: mean   7.57  median   0.50  n 23  t  0.86
+   entry T5 exit T15: mean   1.25  median   1.05  n 24  t  0.28
+   entry T5 exit T30: mean   2.45  median   6.80  n 23  t  0.41
+   entry T5 exit T45: mean   1.74  median  -0.30  n 23  t  0.24
+   entry T5 exit T60: mean   4.12  median   5.50  n 23  t  0.51
+
+B. Thesis 'descriptive' trade (entry C1, exit C60), cost 3 pips: mean 5.32  median 0.80  n 23  win 52.2%  total 122.4
+   bootstrap 95% CI of the net mean: [-11.5, 23.5] pips; share of total P&L from best 3 trades: 219%
+   cost 0: mean   8.32 median   3.80 total   191.4
+   cost 1: mean   7.32 median   2.80 total   168.4
+   cost 2: mean   6.32 median   1.80 total   145.4
+   cost 3: mean   5.32 median   0.80 total   122.4
+   cost 5: mean   3.32 median  -1.20 total    76.4
+
+C. Selection bias: best cell of the 4x4 grid vs a sign-flip null (random direction per event)
+   best cell: entry T1 exit T60  t=0.92; grid-adjusted p = 0.417  (n=23)
+   By side for the same trade: bull-aligned shorts mean 0.08 (n=13), bear-aligned longs mean 19.03 (n=10)
+
+D. Expanding walk-forward parameter selection (needs >=10 prior aligned events; best mean net pnl at 3 pips)
+      date chosen (entry, exit)  net pips   cum
+2018-06-01              (1, 60)     -26.4 -26.4
+2020-05-08              (1, 30)      -0.7 -27.1
+2020-08-07              (1, 60)      29.2   2.1
+2021-08-06              (1, 60)      19.9  22.0
+2022-08-05              (1, 60)      21.7  43.7
+2023-11-03              (1, 60)     -14.4  29.3
+2023-12-08              (1, 60)      -6.9  22.4
+2024-01-05              (1, 60)     -74.7 -52.3
+2024-02-02              (1, 60)      31.8 -20.5
+2024-05-03              (1, 60)     -20.1 -40.6
+2024-08-02              (1, 60)      24.4 -16.2
+2024-10-04              (2, 60)      -0.9 -17.1
+2026-02-11              (1, 60)     -12.8 -29.9
+   total walk-forward net pips: -29.9 over 13 trades (thesis Fig 4.17 used exits up to T90; ends near -58)

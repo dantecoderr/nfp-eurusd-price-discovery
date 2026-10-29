@@ -1,0 +1,69 @@
+A. R2 by horizon, with adjusted R2 (regression sample N=170)
+   Expected R2 of a pure-noise model with 3 regressors = k/(n-1) = 0.0178
+
+ horizon   n    R2    adjR2  joint p
+   T1    170 0.2108 +0.1966  0.000
+   T5    170 0.0157 -0.0021  0.581
+   T10   170 0.0223 +0.0046  0.283
+   T15   170 0.0091 -0.0088  0.710
+   T30   168 0.0153 -0.0027  0.533
+   T45   168 0.0094 -0.0087  0.769
+   T60   168 0.0164 -0.0016  0.449
+
+B. Directional accuracy with exact (Clopper-Pearson) 95% CI; p = two-sided binomial vs 50%
+NFP beat (expect down)
+   T1    70/106 = 66.0%  CI [56.2%, 75.0%]  p=0.001
+   T5    53/106 = 50.0%  CI [40.1%, 59.9%]  p=1.000
+   T10   63/106 = 59.4%  CI [49.5%, 68.9%]  p=0.064
+   T15   69/106 = 65.1%  CI [55.2%, 74.1%]  p=0.002
+   T30   56/105 = 53.3%  CI [43.3%, 63.1%]  p=0.558
+   T45   59/105 = 56.2%  CI [46.2%, 65.9%]  p=0.241
+   T60   56/105 = 53.3%  CI [43.3%, 63.1%]  p=0.558
+beat + all-3 bullish
+   T1    13/14  = 92.9%  CI [66.1%, 99.8%]  p=0.002
+   T5     5/14  = 35.7%  CI [12.8%, 64.9%]  p=0.424
+   T10    4/14  = 28.6%  CI [ 8.4%, 58.1%]  p=0.180
+   T15    7/14  = 50.0%  CI [23.0%, 77.0%]  p=1.000
+   T30    6/13  = 46.2%  CI [19.2%, 74.9%]  p=1.000
+   T45    7/13  = 53.8%  CI [25.1%, 80.8%]  p=1.000
+   T60    6/13  = 46.2%  CI [19.2%, 74.9%]  p=1.000
+NFP miss (expect up)
+   T1    60/86  = 69.8%  CI [58.9%, 79.2%]  p=0.000
+   T5    43/86  = 50.0%  CI [39.0%, 61.0%]  p=1.000
+   T10   42/86  = 48.8%  CI [37.9%, 59.9%]  p=0.914
+   T15   43/86  = 50.0%  CI [39.0%, 61.0%]  p=1.000
+   T30   43/85  = 50.6%  CI [39.5%, 61.6%]  p=1.000
+   T45   37/85  = 43.5%  CI [32.8%, 54.7%]  p=0.278
+   T60   35/85  = 41.2%  CI [30.6%, 52.4%]  p=0.128
+miss + all-3 bearish
+   T1     7/10  = 70.0%  CI [34.8%, 93.3%]  p=0.344
+   T5     6/10  = 60.0%  CI [26.2%, 87.8%]  p=0.754
+   T10    5/10  = 50.0%  CI [18.7%, 81.3%]  p=1.000
+   T15    4/10  = 40.0%  CI [12.2%, 73.8%]  p=0.754
+   T30    6/10  = 60.0%  CI [26.2%, 87.8%]  p=0.754
+   T45    4/10  = 40.0%  CI [12.2%, 73.8%]  p=0.754
+   T60    4/10  = 40.0%  CI [12.2%, 73.8%]  p=0.754
+
+C. Is the 'full alignment' effect just a bigger NFP surprise?
+   NFP surprise (k jobs), beats: median fully aligned 73 vs not 55 ; mean 186 vs 200
+   Beats with Z-scores: n=97, fully aligned=13. Dependent variable: first-minute return (pips)
+   full                                             R2=0.115  coefs=[-24.93]  HC3 p=[0.002]
+   NFP_Z_HIST                                       R2=0.003  coefs=[-1.8]  HC3 p=[0.534]
+   NFP_Z_HIST+full                                  R2=0.121  coefs=[ -2.27 -25.17]  HC3 p=[0.548 0.003]
+   NFP_Z_HIST+AHE_Z_HIST+U3_Z_HIST                  R2=0.099  coefs=[-1.7  -8.23 -0.82]  HC3 p=[0.744 0.154 0.872]
+   NFP_Z_HIST+AHE_Z_HIST+U3_Z_HIST+full             R2=0.162  coefs=[ -3.27  -4.98   2.25 -21.67]  HC3 p=[0.519 0.386 0.667 0.011]
+   -> the full-alignment dummy stays large and significant after controlling for NFP size and the other surprises.
+   Caveat: 13-14 events, and the 'fully aligned' group was defined after looking at the data.
+
+D. Sensitivity of the first-minute regression
+   thesis spec (Z clipped at +/-4)          n=170 R2=0.211 beta=[-13.6  -8.6   2.3] p=[0.    0.065 0.594]
+   excluding all 2020 releases              n=159 R2=0.296 beta=[-19.5 -12.5  -6.7] p=[0.    0.    0.054]
+   excluding Apr-Jun 2020 only              n=167 R2=0.283 beta=[-18.3 -12.3  -4.8] p=[0.    0.    0.142]
+   Z clipped at +/-3 (notebook NFP_Z cols)  n=170 R2=0.235 beta=[-15.  -10.    0.2] p=[0.    0.006 0.947]
+   Z unclipped (raw expanding z)            n=170 R2=0.060 beta=[-4.5 -0.8  8.1] p=[0.089 0.934 0.017]
+   rolling-40 median/MAD z (clip +/-4)      n=170 R2=0.291 beta=[-12.2  -7.2   0.8] p=[0.    0.004 0.685]
+   raw surprises (k jobs, %, %), all 194    n=194 R2=0.041 beta=[ -0.  -11.1  25. ] p=[0.402 0.766 0.04 ]
+   NFP sign only (192 events)               n=192 R2=0.236 beta=[-14.6] p=[0.]
+   three signs                              n=192 R2=0.314 beta=[-15.5  -8.8  -3.3] p=[0.    0.    0.109]
+   NFP sign only, same sample as thesis     n=169 R2=0.265 beta=[-16.] p=[0.]
+   -> sign-based models (R2 0.24-0.31) explain as much or more than the clipped Z-score model (0.21); the unclipped Z-score collapses to 0.06 because three 2020 releases dominate. Magnitude information adds little; the result is mostly a sign effect.

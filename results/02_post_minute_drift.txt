@@ -1,0 +1,35 @@
+A. Signed drift by exit horizon, all releases with a non-zero NFP surprise (n=192)
+ h   n  mean_pips  median      t     p  win_rate
+ 1 192     -0.583   -1.30 -0.580 0.562     0.453
+ 2 192     -0.071   -1.20 -0.065 0.948     0.490
+ 3 192      0.527   -0.65  0.458 0.647     0.469
+ 5 192      2.007    0.00  1.587 0.114     0.500
+10 192      2.494    2.30  1.724 0.086     0.547
+15 192      3.382    2.65  1.988 0.048     0.583
+20 192      4.343    3.10  2.356 0.019     0.583
+30 190      3.061    1.45  1.524 0.129     0.521
+45 190      1.073    1.55  0.463 0.644     0.505
+60 190      1.886   -1.00  0.792 0.429     0.479
+
+B. By side (beat -> short, miss -> long)
+   beats (short) T5: +2.53 (t=+1.52) | T10: +3.79 (t=+2.23) | T15: +5.72 (t=+2.84) | T30: +5.01 (t=+2.16) | T60: +2.86 (t=+1.00)
+   misses (long) T5: +1.36 (t=+0.70) | T10: +0.90 (t=+0.37) | T15: +0.51 (t=+0.18) | T30: +0.65 (t=+0.19) | T60: +0.68 (t=+0.17)
+
+C. Multiple-testing check: max t over exit horizons 1..60, sign-flip null (5000 draws)
+   observed max t = 2.40 at T22; adjusted p = 0.063
+
+D. Stability: signed mean (pips) and net of a 3-pip round-trip cost
+   2010-2017       T10  n= 95 mean=+4.75  t=+1.92  net@3pips=+1.75
+   2010-2017       T15  n= 95 mean=+4.55  t=+1.56  net@3pips=+1.55
+   2010-2017       T20  n= 95 mean=+5.56  t=+1.77  net@3pips=+2.56
+   2018-2026       T10  n= 97 mean=+0.29  t=+0.19  net@3pips=-2.71
+   2018-2026       T15  n= 97 mean=+2.24  t=+1.25  net@3pips=-0.76
+   2018-2026       T20  n= 97 mean=+3.15  t=+1.59  net@3pips=+0.15
+   excluding 2020  T10  n=181 mean=+2.72  t=+1.78  net@3pips=-0.28
+   excluding 2020  T15  n=181 mean=+3.86  t=+2.16  net@3pips=+0.86
+   excluding 2020  T20  n=181 mean=+4.95  t=+2.57  net@3pips=+1.95
+
+E. Signed T15 mean by year (pips, n)
+y      2010  2011  2012  2013  2014  2015  2016  2017  2018  2019  2020  2021  2022  2023  2024  2025  2026
+mean   13.9   3.3  13.4   4.8   2.6  10.1  -3.5  -8.3  -7.3  -1.4  -4.5   0.3  14.1   5.6  -1.3  11.8   4.2
+count  12.0  11.0  12.0  12.0  12.0  12.0  12.0  12.0  12.0  11.0  11.0  12.0  12.0   9.0  12.0  11.0   7.0
